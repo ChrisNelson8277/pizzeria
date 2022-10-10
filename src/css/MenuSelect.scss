@@ -1,0 +1,22 @@
+.menu-container{
+    width: 80%;
+    margin: auto;
+
+}
+.menu-items-select{
+    width: 100%;
+    margin: 1vh 0 3vh;
+    display: flex;
+    align-items: center;
+    justify-content:end;
+}
+select{
+    align-items: center;
+    padding: 0.5rem;
+    width: 50%;
+    text-align: center;
+    font-size: 1rem;
+}
+option{
+    text-align: center;
+}

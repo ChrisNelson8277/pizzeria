@@ -1,0 +1,36 @@
+.checkout-details-container{
+    margin: auto;
+    margin-top: 2%;
+    background-color: grey;
+    padding: 5%;
+    width: 88%;
+}
+input{
+    width: 90%;
+    height: 2vh;
+}
+
+h2{
+    padding: 0;
+    margin: 0;
+}
+.first-last{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    margin: auto;
+    gap: 5vw;
+    padding: 0 5%;
+}
+.grid-container{
+    display: flex;
+}
+label{
+    font-size: 1.3rem;
+    margin: 0 0;
+    padding: 5% 0;
+}
+.first-last input{
+    width: 90%;
+    height: 2vh;
+    margin: auto;
+}

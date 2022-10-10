@@ -1,0 +1,60 @@
+@import './Variables.scss';
+
+.nav-bar-container{
+    background-color: $prim-color;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.nav-bar-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+.nav-flex-start{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.vinnys-logo:hover{
+    cursor: pointer;
+}
+.nav-flex-end{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-icons{
+    font-size: 1.8rem;
+}
+.nav-icons:hover{
+    cursor: pointer;
+}
+.nav-flex-end div{
+    font-size: 1rem;
+    padding: 0 0.5rem;
+}
+.cart-icon{
+    position: relative;
+}
+.cart-badge{
+    position: absolute;
+    top: -1.5vh;
+    right: -1.5vw;
+    background-color: white;
+    color: red;
+    font-weight: 500;
+    border-radius: 50%;
+}
+@media (min-width:600px){
+    .cart-badge{
+        right: 0vw;
+    }
+}
+@media (min-width:1200px){
+    .cart-badge{
+        right: -0.2vw;
+    }
+}

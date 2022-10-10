@@ -1,0 +1,115 @@
+.cart-container{
+    position: relative;
+    margin: auto;
+    height:85vh;
+    background-color: #282c34;
+    width: 100%;
+}
+.sidebar-container img{
+    width: 100%;
+    height: 100px;
+}.sidebar-container ul{
+    margin: 0;
+    text-align: left;
+    font-size: 1.0rem;
+}
+.sidebar-container li{
+    list-style: none;
+    text-align: left;
+    padding: 5% 0%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    
+}
+.size{
+    margin:0;
+    padding: 0;
+    text-align: left;
+    align-items: left;
+    justify-content: left;
+    justify-items: left;
+}
+.size h6{
+    padding: 10% 0;
+    margin: 1% 0;
+    text-align: left;
+}
+.sidebar-container a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    white-space: nowrap;
+}
+.cart-card-container{
+    margin: 10% 0;
+    margin: auto;
+    width: 98%;
+}
+.cart-item-card{
+    min-height: 10vh;
+    font-family: 'Public Sans', sans-serif;
+    background-color: rgba(229, 230, 234, 0.895);
+    display: grid;
+    margin: 3% 0;
+    font-size: 1.3rem;
+    grid-template-columns: 25% 41% 33%;
+}
+.cart-item-card select{
+    width: 100%;
+}
+.cart-item{
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.cart-price{
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.cart-info{
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+}
+.cart-item-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 5vh;
+}
+h5{
+    padding: 0;
+    margin: 0;
+}
+.special-instructions{
+    margin-top: 2%;
+}
+.special-text{
+    margin-top: 5%;
+}
+.empty-cart{
+    height: 25vh;
+    width: 50vw;
+    background-color: white;
+    margin: auto;
+}
+.empty-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    height: 25vh;
+}
+.empty-flex h2{
+}
+@media (min-width:600px){
+    .cart-item-card{
+
+    }
+}

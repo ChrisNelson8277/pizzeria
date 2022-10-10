@@ -1,0 +1,43 @@
+.login-container{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+    margin-bottom: 5vh;
+
+}
+.sign-ups{
+    border-bottom: 2px solid black;
+}
+.signup-header{
+    width: 100%;
+    margin-bottom: 2vh;
+}
+.inputs{
+    text-align: left;
+    display: block;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 2vh;
+}
+.login-container input{
+    width: 90%;
+    padding: 2.5%;
+}
+.inputs h3{
+    margin: 1% 0;
+}
+.login-button{
+    width: 100%;
+    margin-bottom: 5vh;
+}
+.login-button button:hover{
+    cursor: pointer;
+}
+.login-button button{
+    width: 70%;
+    padding: 3%;
+}

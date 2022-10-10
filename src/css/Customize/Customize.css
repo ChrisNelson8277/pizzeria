@@ -1,0 +1,124 @@
+.customize-container{
+    position: relative;
+    width: 90%;
+    margin: auto;
+    margin-top: 2vh;
+}
+
+.flex{
+    display: flex;
+    padding: 3% 0;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex input[type="radio"]{
+    height: 24px;
+    width: 24px;
+    justify-content: left;
+}
+.first-flex label{
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+}
+.first-flex{
+    display: flex;
+    align-items: center;
+    
+}
+.form-container{
+    width: 75%;
+    margin: 0 auto;
+}
+.size-container{
+    background: white;
+}
+.footer-container{
+    position: sticky;
+    bottom: 0%;
+    height: 10vh;
+    background-color: red;
+    width: 100%;
+    color: white;
+    margin: auto;
+}
+.footer-flex{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3%;
+}
+.footer-qty{
+    display: flex;
+    align-items: center;
+}
+.qty-icons:hover{
+cursor: pointer;
+}
+.price-calories{
+
+}
+.footer-button{
+display: flex;
+}
+.footer-button button{
+    margin-right: 2vw;
+}
+.form-flex{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+}
+.form-flex label{
+    padding: 1% 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.form-flex input{
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+.sizes-header{
+    border-bottom: 3px solid black;
+}
+.sizes-header h3{
+    padding: 3% 0;
+    margin: 0;
+}
+.toppings-container{
+    display: flex;
+    margin: auto;
+    margin: 2vh 0;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    padding-bottom: 1%;
+}
+.toppings-container form{
+    width: 75%;
+}
+.instruction-header{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    margin-bottom:1vh;
+    border-bottom: 4px solid black;
+}
+.instruction-header h3{
+    margin: 2% 0;
+}
+/* @media (min-width:1200px){
+    .customize-container{
+        font-size: 1.3rem;
+        width: 80%;
+    }
+} */

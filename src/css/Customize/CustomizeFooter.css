@@ -1,0 +1,14 @@
+.footer-container{
+    position: absolute;
+    bottom: 0;
+    background-color: red;
+    width: 100%;
+}
+.footer-button button{
+    width: 100%;
+}
+@media(min-width:1200px){
+    .footer-container{
+        font-size: 1.3rem;
+    }
+}

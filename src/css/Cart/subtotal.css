@@ -1,0 +1,55 @@
+.subtotal-container2{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    background-color: rgba(229, 230, 234, 0.895);
+    min-height: 20vh;
+    font-size: 1.3rem;
+    font-family: 'Public Sans', sans-serif;
+    width: 100%;
+    margin: auto;
+
+}
+.promo-container{
+    display: flex;
+    padding: 5% 0;
+    width: 100%;
+}
+.button-container{
+    flex-grow: calc(100%);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.promo input{
+    width: 90%;
+    height: 3vh;
+    text-align: center;
+}
+.promo-button{
+    width: 90%;
+    height: 3.5vh;
+}
+.subtotal-wrapper :nth-child(2){
+    margin-right: 1%;
+}
+.subtotal-wrapper li{
+    list-style: none;
+}
+.checkout-button button{
+    width: 100%;
+    border-radius: 20px;
+    background-color: red;
+    color: black;
+    font-family: 'Public Sans', sans-serif;
+    height: 5vh;
+    font-size: 1.5rem;
+    border-color: none;
+    margin-top: 1vh;
+    border: none;
+    text-align: center;
+    padding: 0;
+}
+.checkout-button button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+}

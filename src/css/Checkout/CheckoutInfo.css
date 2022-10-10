@@ -1,0 +1,60 @@
+.checkout-info-container{
+    min-height: 15vh;
+    background-color: grey;
+    width: 98%;
+    margin: auto;
+    font-size: 1.3rem;
+}
+.header{
+    width: 90%;
+    margin: auto;
+    text-align: left;
+    border-bottom: 2px solid black;
+}
+.footer{
+    width: 90%;
+    border-bottom: 2px solid black;
+    margin: auto;
+}
+.grid-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 10%;
+    color: white;
+}
+.input-button{
+    display: flex;
+    margin: 1% 10%;
+    justify-content: space-between;
+    padding-bottom: 5%;
+}
+.input-button input{
+    width: 60%;
+    
+}
+.total{
+    padding-bottom: 10%;
+}
+.input-button button{
+    width: 25vw;
+    color: red;
+}
+.input-button button:hover{
+    cursor: pointer;
+}
+.checkout-info-container h1{
+    text-align: left;
+    padding-left: 3%;
+    border-bottom: 2px solid black;
+}
+#place-order{
+    width: 90%;
+    margin: auto;
+    background-color: rgb(255, 35, 35);
+    color: white;
+    border: none;
+    height: 3vh;
+}
+.button-container{
+    padding-bottom: 1vh;
+}
