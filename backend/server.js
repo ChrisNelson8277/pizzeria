@@ -17,10 +17,18 @@ const storeItems = new Map([
     [3, { small: 1299, medium: 1399, large: 1699, name: "Spicy Pepp Pizza"}],
 ])
 
+app.post('/register', (req, res) => {
+    const registerUser = require('./controllers/register')
+    registerUser.handleNewUser(req, res)
+})
+app.post('/login', (req, res) => {
+    console.log('trigger')
+    const loginUser = require('./controllers/authController')
+    loginUser.handleLogin(req, res)
+})
+
 app.post('/create-checkout-session', async (req, res) => {
-    console.log(req.body.items,'nodejs')
     const qty = req.body.items[0].qty
-    console.log(req.body.items)
     const items = req.body.items
     try {
         const session = await stripe.checkout.sessions.create({
@@ -45,7 +53,8 @@ app.post('/create-checkout-session', async (req, res) => {
             success_url: `${process.env.CLIENT_URL}/success`,
             cancel_url: process.env.CLIENT_URL
         })
-        res.json({url: session.url})
+        res.json({url: session.url, orderId: 1})
+        
     } catch (e) {
         res.status(500).json({ error: e.message })
     }

@@ -1,11 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import './css/success.css'
 
 const Success = ({setCart}) => {
-        window.localStorage.clear()
-        setCart([]);
+  const [test,setTest] = useState(Math.random());
+  useEffect(() => {
+    window.localStorage.clear()
+    setCart([]);
+  }, [test])
     
   return (
-    <div><h1>You have successfully checked out!</h1></div>
+    <div className='success-container'>
+      <div className='success-wrapper'>
+      <h4>You have successfully checked out!</h4>
+      <p>Your order will be ready for pickup in 15-25 minutes</p>
+      </div>
+      </div>
   )
 }
 

@@ -12,7 +12,7 @@ import Success from './Pages/Success';
 
 
 function App() {
-
+  const [user, setUser] = useState();
   const [openSideBar, setOpenSideBar] = useState(false);
   const [cart, setCart] = useState([]);
   const [localStorage, setLocalStorage] = useState();
@@ -42,7 +42,7 @@ useEffect(() => {
           {openCart === true && <Cart/>}
         </header>
           <Routes>
-            <Route path="/signup" element={<LoginPage/>}></Route>
+            <Route path="/signup" element={<LoginPage setUser={setUser}/>}></Route>
             <Route index path="/" element={<MenuPage setCustomize={setCustomize}/>}></Route>
             <Route path="/customize" element={<Customize setLocalStorage={setLocalStorage} setCart={setCart} cart={cart} customize={customize}/>}></Route>
             <Route path="/cart" element={<Cart setSubtotal={setSubtotal} cart={cart} setOpenCart={setOpenCart}/>}></Route>

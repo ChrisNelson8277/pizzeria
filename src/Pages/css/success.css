@@ -1,0 +1,11 @@
+.success-container{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.success-wrapper{
+    background-color: white;
+    width: 80%;
+    padding: 0 1rem;
+}

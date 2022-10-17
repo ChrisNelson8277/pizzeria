@@ -3,11 +3,11 @@ import Login from '../components/Users/Login'
 import Signup from '../components/Users/Signup'
 import './css/LoginPage.css'
 
-const LoginPage = () => {
+const LoginPage = ({setUser}) => {
   return (
     <div className='login-page-container'>
         <div>
-        <Login/>
+        <Login setUser={setUser}/>
         </div>
         <div>
             <Signup/>

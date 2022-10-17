@@ -25,8 +25,9 @@ const SubTotal = (props) => {
         .then(res => {
             if (res.ok) return res.json()
             return res.json().then(json => Promise.reject(json))
-        }).then(({ url }) => {
+        }).then(({ url, orderId }) => {
             window.location = url
+            console.log(orderId)
         }).catch(e => {
             console.error(e.error)
         })
