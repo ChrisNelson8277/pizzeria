@@ -1,41 +1,51 @@
 const express = require ('express')
 const dotenv = require('dotenv').config()
-const port = process.env.PORT || 5000
-
+const port = 5000
+const cors = require('cors')
 const app = express()
 
 app.use(express.json())
-app.use(express.static('build/static/js'))
-
+app.use(cors({
+    origin: 'http://localhost:3000'
+}))
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
-const storeItems = new Map([[
-    1, { priceInCents: 10000, name: "Pepperoni Pizza"},
-    2, { priceInCents: 10000, name: "Cheese Pizza"},
-]])
+const storeItems = new Map([
+    [0, { small: 1299, medium: 1499, large: 1699, name: "Pepperoni Pizza"}],
+    [1, { small: 1299, medium: 1499, large: 1699, name: "Cheese Pizza"}],
+    [2, { small: 1299, medium: 1499, large: 1699, name: "Mega Meat Pizza"}],
+    [3, { small: 1299, medium: 1399, large: 1699, name: "Spicy Pepp Pizza"}],
+])
 
 app.post('/create-checkout-session', async (req, res) => {
+    console.log(req.body.items,'nodejs')
+    const qty = req.body.items[0].qty
+    console.log(req.body.items)
+    const items = req.body.items
     try {
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             mode: 'payment',
-            line_items: req.body.items.map(item => {
+            line_items: items.map(item => {
                 const storeItem = storeItems.get(item.id)
+                function getPrice(id, size){
+                    const storeItem = storeItems.get(item.id)
+                }
                 return{
                     price_data: {
                         currency: 'usd',
                         product_data: {
                             name: storeItem.name
-                        }
-                        }
+                        },
+                        unit_amount: storeItem[item.size]
                     },
-                    quantity: item.quantity
+                    quantity: item.qty
                 }
             }),
-            success_url: `${process.env.SERVER_URL}/success.html`,
-            cancel_url: `${process.env.SERVER_URL}/success.html`
+            success_url: `${process.env.CLIENT_URL}/success`,
+            cancel_url: process.env.CLIENT_URL
         })
-        res.json({url: session.url })
+        res.json({url: session.url})
     } catch (e) {
         res.status(500).json({ error: e.message })
     }

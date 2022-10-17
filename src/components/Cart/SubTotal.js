@@ -7,6 +7,30 @@ const SubTotal = (props) => {
     function goToCheckout(){
         navigate('/checkout')
     }
+    console.log(props,'sub props')
+    function goToCheckout(){
+        fetch('http://localhost:5000/create-checkout-session/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json",
+            },
+            body: JSON.stringify({
+                items: props.cartItems.map((items) => {console.log(items)
+                    return {id: items.id, qty: items.qty, size: items.size}
+                })
+                
+                
+            })
+        })
+        .then(res => {
+            if (res.ok) return res.json()
+            return res.json().then(json => Promise.reject(json))
+        }).then(({ url }) => {
+            window.location = url
+        }).catch(e => {
+            console.error(e.error)
+        })
+    }
   return (
     <div className=''>
         <div className='subtotal-container2'>
@@ -32,7 +56,7 @@ const SubTotal = (props) => {
                     <button className='promo-button'>Apply</button>
                 </div>
             </div>
-            <div  className='checkout-button'><button onClick={goToCheckout}>Checkout</button></div>
+            <div  className='checkout-button' onClick={() => goToCheckout()}><button onClick={goToCheckout}>Checkout</button></div>
     </div>
   )
 }

@@ -36,10 +36,13 @@ const CustomizeFooter = (props) => {
     let newItem = {
         "name": props.customize[0].name,
         "qty": props.customize[0].qty,
+        'id': props.customize[0].id,
         "size": props.size,
         "price": props.price,
         "special": props.instructionsList
     }
+    
+    
     function addToCart(){
         if (props.size === undefined){
             alert("You must select a size");
@@ -47,6 +50,7 @@ const CustomizeFooter = (props) => {
         else{
             navigate('/')
             props.setCart([newItem,...props.cart])
+            localStorage.setItem('items', JSON.stringify([newItem,...props.cart]));
         }
     }
   return (

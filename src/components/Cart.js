@@ -7,7 +7,6 @@ const Cart = (props) => {
     let counter = 0;
     const [page,updatePage] = useState();
     const [total,setTotal] = useState(0);
-    console.log(props.cart)
     function updatePrice(qty, price){
         let val = qty * price
         counter = counter + price * qty
@@ -54,7 +53,7 @@ const Cart = (props) => {
                     </div>
                     <div className='cart-price'>${updatePrice(cartItems.qty, cartItems.price)}</div>
                 <br/></div>})}
-                <SubTotal totalPrice={counter}/>
+                <SubTotal cartItems={props.cart} totalPrice={counter}/>
               </div>
           </motion.div>
         )

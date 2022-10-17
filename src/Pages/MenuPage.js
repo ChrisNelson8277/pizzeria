@@ -40,7 +40,7 @@ const MenuPage = (props) => {
           <MenuSelect/>
         <div className='app-cards-container'>
             <div className='cards'>
-            {menu.map(menuItems => <Card setCustomize={props.setCustomize} key={menuItems.id} name={menuItems.Name} toppings={menuItems.toppings} smallPrice={menuItems.smallPrice} mediumPrice={menuItems.mediumPrice} largePrice={menuItems.largePrice} />)}
+            {menu.map(menuItems => <Card setCustomize={props.setCustomize} key={menuItems.id} id={menuItems.id} name={menuItems.Name} toppings={menuItems.toppings} smallPrice={menuItems.smallPrice} mediumPrice={menuItems.mediumPrice} largePrice={menuItems.largePrice} />)}
             </div>
         </div>
      </div>

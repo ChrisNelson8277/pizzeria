@@ -25,7 +25,7 @@ const NavBar = (props) => {
                 <div><FaUser onClick={goToSignup}/></div>
                 <div className='cart-icon' onClick={() => {navigate('/cart')}}>
                     <AiOutlineShoppingCart/>
-                    {<div className='cart-badge'>{props.cart.length}</div>}
+                    {<div className='cart-badge'>{props.cart.length >= 1 ? <>{props.cart.length}</> : 0}</div>}
                 </div>
             </div>
 

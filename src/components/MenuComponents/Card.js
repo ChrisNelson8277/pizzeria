@@ -2,11 +2,11 @@ import React from 'react'
 import '../../css/Menu/Card.scss'
 import pepImg from '../../images/menu/vinnyspep.png';
 import {useNavigate} from 'react-router-dom'
-const Card = ({name, toppings, smallPrice, mediumPrice, largePrice, setCustomize}) => {
+const Card = ({name, toppings, smallPrice, mediumPrice, largePrice, setCustomize, id}) => {
     let navigate = useNavigate();
-    console.log(toppings)
     let item = [
         {"name": name,
+        "id": id,
         "smallPrice": smallPrice,
         "meduimPrice": mediumPrice,
         "largePrice": largePrice,
@@ -16,7 +16,6 @@ const Card = ({name, toppings, smallPrice, mediumPrice, largePrice, setCustomize
     function goToCustomize () {
         navigate('/customize');
         setCustomize(item)
-        console.log(item[0].name, item[0].smallPrice)
     }
   return (
     <div className='card-container'>

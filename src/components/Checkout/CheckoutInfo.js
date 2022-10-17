@@ -3,6 +3,28 @@ import '../../css/Checkout/CheckoutInfo.css'
 
 const CheckoutInfo = (props) => {
     console.log(props)
+    function goToCheckout(){
+        fetch('http://localhost:5000/create-checkout-session/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json",
+            },
+            body: JSON.stringify({
+                items: [
+                    { id: 1, quantity: 3},
+                    { id: 2, quantity: 1}
+                ]
+            })
+        })
+        .then(res => {
+            if (res.ok) return res.json()
+            return res.json().then(json => Promise.reject(json))
+        }).then(({ url }) => {
+            window.location = url
+        }).catch(e => {
+            console.error(e.error)
+        })
+    }
   return (
     <div className='checkout-info-container'>
         <div>
@@ -29,7 +51,7 @@ const CheckoutInfo = (props) => {
                  <div>${props.subtotal}</div>   
             </div>
             <div className='button-container'>
-            <button id="place-order">Place Order</button>
+            <button onClick={() => goToCheckout()} id="place-order">Place Order</button>
             </div>
         </div>
     </div>
