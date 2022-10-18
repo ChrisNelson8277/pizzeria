@@ -38,7 +38,7 @@ const Signup = () => {
             </div>
         </div>
         <form onSubmit={(e) => {register(e)}}>
-        <div className='inputs'>
+        <div className='inputs2'>
             <label htmlFor='firstName'>First Name<span className='req'>*</span></label>
             <input id='firstName' name='first'></input>
             <label htmlFor='lastName'>Last Name<span className='req'>*</span></label>

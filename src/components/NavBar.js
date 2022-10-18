@@ -11,7 +11,13 @@ import { useNavigate } from 'react-router-dom';
 const NavBar = (props) => {
     let navigate= useNavigate();
     function goToSignup() {
-        navigate('/signup')
+        if (props.user){
+            props.setOpenLogin(!props.openLogin)
+            return
+        }
+        else{
+            navigate('/signup')
+        }
     }
     function goHome() {
         navigate('/')
@@ -22,7 +28,7 @@ const NavBar = (props) => {
             <div className='nav-flex-start'><Hamburger onToggle={() => {props.setOpenSideBar(!props.openSideBar)}} size={20}/><div><img className='vinnys-logo' onClick={goHome} src={NavLogo} alt="Vinnys Apizza"></img></div></div>
             <IconContext.Provider value={{className:"nav-icons"}}>
             <div className='nav-flex-end'>
-                <div><FaUser onClick={goToSignup}/></div>
+                <div className='user-icon'><FaUser onClick={goToSignup}/></div>
                 <div className='cart-icon' onClick={() => {navigate('/cart')}}>
                     <AiOutlineShoppingCart/>
                     {<div className='cart-badge'>{props.cart.length >= 1 ? <>{props.cart.length}</> : 0}</div>}

@@ -3,7 +3,7 @@
     justify-content: baseline;
     align-items: center;
     background-color: white;
-    width: 90%;
+    width: 75%;
     flex-direction: column;
     margin: auto;
 
@@ -15,30 +15,40 @@
     width: 100%;
     margin-bottom: 2vh;
 }
-.inputs{
+.inputs2{
     text-align: left;
     display: block;
-    width: 95%;
+    width: 75%;
+    margin: auto;
     margin-bottom: 2vh;
 }
 .signup-container input{
-    width: 90%;
+    width: 100%;
     padding: 2.5%;
 }
 .inputs h3{
     margin: 1% 0;
 }
 .signup-button{
-    width: 100%;
+    width: 80%;
+    margin: auto;
     margin-bottom: 5vh;
 }
 .signup-button button:hover{
     cursor: pointer;
+    transform: scale(1.1);
 }
 .signup-button button{
-    width: 70%;
-    padding: 2%;
+    width: 80%;
+    padding: 1%;
+    font-size: 2rem;
 }
 .req{
     color: red;
+}
+.sign-ups h3{
+    font-size: 2rem;
+}
+.signup-container form{
+    width: 100%;
 }

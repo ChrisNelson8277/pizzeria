@@ -1,8 +1,10 @@
 import React from 'react'
 import '../../css/Users/Login.scss'
-
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Login = ({setUser}) => {
+  let navigate = useNavigate();
+
   function loginHandler(event){
     event.preventDefault();
     let email = event.target.email.value
@@ -17,8 +19,9 @@ const Login = ({setUser}) => {
         })
       }).then((res)=>res.json()).then((data)=>{
         if(data.success){
-          console.log('setting data')
-          setUser(data);
+          navigate('/')
+          setUser(JSON.stringify(data));
+          localStorage.setItem('user', JSON.stringify(data));
         }
       })
       .catch(e => {

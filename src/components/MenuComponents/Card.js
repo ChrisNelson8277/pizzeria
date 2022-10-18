@@ -26,9 +26,8 @@ const Card = ({name, toppings, smallPrice, mediumPrice, largePrice, setCustomize
             </picture>
         </div>
         <div className='card-desc-header'><h2>{name}</h2></div>
-        {console.log(toppings.length)}
         <div className='card-desc'>({toppings.map((topping, index)=> 
-            <span>{index == toppings.length -1 ? topping : topping + ", "}</span>
+            <span key={index}>{index == toppings.length -1 ? topping : topping + ", "}</span>
             )})
         </div>
         <div className='card-desc'>Starting at ${smallPrice}</div>

@@ -1,0 +1,70 @@
+.modal-container{
+        position: fixed;
+        top: 5%;
+        right: 5%;
+        background-color: rgba(229, 230, 234, 0.895);
+        width: 20%;
+        z-index: 1;
+        border-radius: 10px;
+        display: block;
+        align-items: center;
+        margin: auto;
+        padding: 1rem 0;
+    
+}
+.modal-wrapper{
+    height: 100%;
+    width: 100%;
+    
+    margin: auto;
+    align-items: center;
+}
+.modal-flex{
+    display: flex;
+    padding: 1rem;
+    color: black;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    text-transform: capitalize;
+}
+.modal-flex h5{
+    color: rgb(0, 0, 0);
+}
+.modal-log-button{
+    display: flex;
+    justify-content: center;
+}
+.modal-log-button button{
+    width: 80%;
+    min-height: 3vh;
+    background-color: red;
+    color: white;
+    font-size: 2rem;
+    border-radius: 10px;
+}
+.modal-log-button button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+#user-circle:hover{
+    color: blue;
+    cursor: pointer;
+}
+@media(max-width:850px){
+    .modal-container{
+        width: 25%;
+        font-size: 1.3rem;
+    }
+}
+@media(max-width:600px){
+    .modal-container{
+        width: 35%;
+        font-size: 1rem;
+    }
+    .modal-log-button button{
+        min-height: 1vh;
+        font-size: 1rem;
+    }
+}

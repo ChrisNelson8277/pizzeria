@@ -3,7 +3,7 @@
     justify-content: baseline;
     align-items: center;
     background-color: white;
-    width: 90%;
+    width: 75%;
     margin: auto;
     flex-direction: column;
     margin-bottom: 5vh;
@@ -24,8 +24,11 @@
     margin-bottom: 2vh;
 }
 .login-container input{
-    width: 90%;
+    width: 100%;
     padding: 2.5%;
+}
+.login-container form{
+    width: 80%;
 }
 .inputs h3{
     margin: 1% 0;
@@ -36,8 +39,10 @@
 }
 .login-button button:hover{
     cursor: pointer;
+    transform: scale(1.1);
 }
 .login-button button{
-    width: 70%;
-    padding: 3%;
+    width: 80%;
+    padding: 1%;
+    font-size: 2rem;
 }
