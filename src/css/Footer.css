@@ -1,0 +1,27 @@
+.main-footer-container{
+    width: 100%;
+    background-color: rgb(58, 55, 55);
+}
+.main-footer{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1rem;
+    width: 80%;
+    margin: auto;
+    padding: 0rem 0 2rem;
+    color: white;
+}
+.footer-heading{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+}
+.footer-heading a{
+    padding: 0.3rem;
+    color: white;
+}
+.footer-heading a:any-link{
+    color: white;
+    text-decoration: none;
+}

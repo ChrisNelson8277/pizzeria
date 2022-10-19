@@ -29,6 +29,9 @@ body {
   justify-content: space-between;
   justify-items: center;
 }
+.card-img{
+  max-width: 100%;
+}
 @media (min-width:600px){
   .cards{
     display: grid;

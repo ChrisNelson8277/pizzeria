@@ -39,7 +39,7 @@
 .footer-container{
     position: sticky;
     bottom: 0%;
-    height: 10vh;
+    height: 5vh;
     background-color: red;
     width: 100%;
     color: white;
@@ -51,6 +51,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 3%;
+    font-size: 1.5rem;
 }
 .footer-qty{
     display: flex;
@@ -122,3 +123,8 @@ display: flex;
         width: 80%;
     }
 } */
+@media(max-width:650px){
+    .footer-flex{
+        font-size: 1.1rem;
+    }
+}

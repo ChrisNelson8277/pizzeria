@@ -8,7 +8,6 @@
 }
 .product-picture{
     width: 100%;
-    height: 250px;
     object-fit: cover;
     object-position: center center;
 }
@@ -16,10 +15,10 @@
     text-shadow: 3px 1px 3px rgb(7, 7, 7);
 }
 .card-desc{
-    padding: 5% 5% 1%;
+    padding: 1rem;
 }
 .card-desc-header{
-    padding: 1% 5% 1%;
+    padding: 1rem;
 }
 .card-button:hover{
 cursor: pointer;
@@ -32,48 +31,15 @@ cursor: pointer;
     padding: 5%;
     color: rgb(207, 32, 32);
     font-weight: 1000;
+    font-size: 2rem;
 }
-@media only screen and (min-width: 650px){
-    .product-picture{
-        height: 250px;
-    }
-}
-@media only screen and (min-width: 800px){
-    .product-picture{
-        height: 300px;
-    }
-    .card-container{
-        width: 350px;
+@media (min-width: 850px){
+    .card-container img{
+        height: 200px;
     }
 }
-@media only screen and (min-width: 1200px){
-    .product-picture{
-        height: 300px;
-    }
-    .card-container{
-        width: 400px;
+@media (min-width: 1200px){
+    .card-container img{
+        height: 400px;
     }
 }
-@media only screen and (min-width: 1800px){
-    .product-picture{
-        height: 350px;
-    }
-    .card-container{
-        width: 650px;
-    }
-}
-// @media (min-width: 850px){
-//     .card-container img{
-//         height: 200px;
-//     }
-// }
-// @media (min-width: 1200px){
-//     .card-container img{
-//         height: 600px;
-//     }
-// }
-// @media (min-width: 2000px){
-//     .card-container img{
-//         height: 600px;
-//     }
-// }

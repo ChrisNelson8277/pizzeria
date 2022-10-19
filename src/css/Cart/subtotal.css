@@ -33,6 +33,7 @@
     margin-right: 1%;
 }
 .subtotal-wrapper li{
+    padding: 0.3rem;
     list-style: none;
 }
 .checkout-button button{
