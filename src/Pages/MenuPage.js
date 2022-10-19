@@ -37,7 +37,7 @@ const MenuPage = (props) => {
 
   return (
     <div className="menu-container">
-      <MenuSelect />
+      {/* <MenuSelect /> */}
       <div className="app-cards-container">
         <div className="cards">
           {menu.map((menuItems) => (

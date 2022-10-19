@@ -24,12 +24,15 @@ const NavBar = (props) => {
     <nav className="nav-bar-container">
       <div className="nav-bar-flex">
         <div className="nav-flex-start">
-          <Hamburger
-            onToggle={() => {
-              props.setOpenSideBar(!props.openSideBar);
-            }}
-            size={20}
-          />
+          <div className="hamburger-menu">
+            <Hamburger
+              className="hamburger-menu"
+              onToggle={() => {
+                props.setOpenSideBar(!props.openSideBar);
+              }}
+              size={20}
+            />
+          </div>
           <div>
             <img
               className="vinnys-logo"
@@ -39,26 +42,32 @@ const NavBar = (props) => {
             ></img>
           </div>
         </div>
-        <IconContext.Provider value={{ className: "nav-icons" }}>
-          <div className="nav-flex-end">
+        <div className="nav-flex-end">
+          <span id="hide-links">
+            <a href="/">Home</a>
+            <a href="/menu">Menu</a>
+          </span>
+          <IconContext.Provider value={{ className: "nav-icons" }}>
             <div className="user-icon">
               <FaUser onClick={goToSignup} />
             </div>
-            <div
-              className="cart-icon"
-              onClick={() => {
-                navigate("/cart");
-              }}
-            >
+          </IconContext.Provider>
+          <div
+            className="cart-icon"
+            onClick={() => {
+              navigate("/cart");
+            }}
+          >
+            <IconContext.Provider value={{ className: "nav-icons" }}>
               <AiOutlineShoppingCart />
-              {
-                <div className="cart-badge">
-                  {props.cart.length >= 1 ? <>{props.cart.length}</> : 0}
-                </div>
-              }
-            </div>
+            </IconContext.Provider>
+            {
+              <div className="cart-badge">
+                {props.cart.length >= 1 ? <>{props.cart.length}</> : 0}
+              </div>
+            }
           </div>
-        </IconContext.Provider>
+        </div>
       </div>
     </nav>
   );

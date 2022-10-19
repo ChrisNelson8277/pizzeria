@@ -1,8 +1,7 @@
 .sidebar-container{
-    position: fixed;
+    position: absolute;
     top: 15%;
-    left: -65%;
-    height:100%;
+    left: 0;
     background-color: rgba(229, 230, 234, 0.895);
     width: 80%;
     z-index: 1;
@@ -18,14 +17,27 @@
 .sidebar-container li{
     list-style: none;
     text-align: left;
-    padding: 5% 0%;
+    padding: 1rem;
     font-size: 1.5rem;
     font-weight: 500;
-    
 }
 .sidebar-container a{
     text-decoration: none;
     color: black;
     width: 100%;
     white-space: nowrap;
+}
+.sidebar-wrapper{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 1rem;
+}
+@media (min-width:650px){
+    .sidebar-container{
+        top: 8%;
+        width: 60%;
+    }
 }

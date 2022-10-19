@@ -5,9 +5,7 @@ const MenuSelect = () => {
   return (
     <div className="menu-items-select">
       <select name="menu-items">
-        <option selected disabled hidden>
-          Menu Items
-        </option>
+        <option defaultValue={"Menu Items"} disabled hidden></option>
         <option value="pizza">Pizza</option>
         <option value="pizza">Subs</option>
         <option value="pizza">Salads</option>

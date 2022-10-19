@@ -49,9 +49,33 @@
     font-weight: 500;
     border-radius: 50%;
 }
+.hamburger-menu{
+    display: block;
+}
+.nav-flex-end a{
+    padding: 0 1.5rem;
+}
+.nav-flex-end
+#hide-links a:any-link{
+    text-decoration: none;
+    color: rgb(248, 248, 248);
+}
+#hide-links{
+    display: block;
+}
 @media (min-width:600px){
     .cart-badge{
         right: 0vw;
+    }
+}
+@media(max-width:849px){
+#hide-links{
+    display: none;
+}
+}
+@media(min-width:850px){
+    .hamburger-menu{
+        display: none;
     }
 }
 @media (min-width:1200px){

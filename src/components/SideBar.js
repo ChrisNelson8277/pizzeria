@@ -5,13 +5,13 @@ import NavLogo from "../images/navbar/navlogo.png";
 
 const SideBar = () => {
   return (
-    <motion.div
-      animate={{ x: 250 }}
-      transition={{ duration: 1, type: "tween" }}
+    <div
+      data-aos="slide-right"
+      data-aos-duration="1500"
       className="sidebar-container"
     >
-      <div></div>
-      <div>
+      <h3 style={{ color: "black", borderBottom: "2px solid black" }}>Menu</h3>
+      <div className="sidebar-wrapper">
         <ul>
           <li>
             <a href="/">SPECIAL OFFERS</a>
@@ -26,7 +26,7 @@ const SideBar = () => {
             <li><a href='/'>Pizza</a></li> */}
         </ul>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
