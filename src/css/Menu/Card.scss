@@ -8,6 +8,7 @@
 }
 .product-picture{
     width: 100%;
+    height: 450px;
     object-fit: cover;
     object-position: center center;
 }
@@ -28,18 +29,16 @@ cursor: pointer;
     border: none;
     background: none;
     border-top: 1px solid black;
-    padding: 5%;
+    padding: 1rem;
     color: rgb(207, 32, 32);
     font-weight: 1000;
-    font-size: 2rem;
-}
-@media (min-width: 850px){
-    .card-container img{
-        height: 200px;
-    }
+    font-size: 1rem;
 }
 @media (min-width: 1200px){
-    .card-container img{
-        height: 400px;
-    }
+   .card-container{
+    width: 80%;
+   }
+}
+@media (min-width: 1200px){
+    
 }

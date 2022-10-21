@@ -21,7 +21,7 @@ const MenuPage = (props) => {
           };
           products.push(product);
         }
-        console.log(products);
+
         setIsLoading(false);
         setMenu(products);
       });
