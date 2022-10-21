@@ -13,6 +13,7 @@ import LoginModule from "./components/Users/LoginModule";
 import Aos from "aos";
 import Landing from "./Pages/Landing";
 import MainFooter from "./components/MainFooter";
+import ItemEditor from "./Pages/ItemEditor";
 
 function App() {
   Aos.init();
@@ -24,6 +25,7 @@ function App() {
   const [customize, setCustomize] = useState();
   const [openCart, setOpenCart] = useState(false);
   const [subtotal, setSubtotal] = useState(0);
+  const [editingItem, setEditingItem] = useState();
   const storage = window.localStorage.getItem("items");
   const isLoggedIn = window.localStorage.getItem("user");
 
@@ -31,7 +33,6 @@ function App() {
     setCart([]);
     if (isLoggedIn && user === undefined) {
       setUser(isLoggedIn);
-      console.log(isLoggedIn, "isloggedin");
     }
     if (storage == undefined) {
       setCart([]);
@@ -87,6 +88,18 @@ function App() {
             }
           ></Route>
           <Route
+            path="/ItemEditor"
+            element={
+              <ItemEditor
+                cart={cart}
+                uid={editingItem}
+                customize={customize}
+                setLocalStorage={setLocalStorage}
+                setCart={setCart}
+              />
+            }
+          />
+          <Route
             path="/menu"
             element={
               <>
@@ -114,8 +127,11 @@ function App() {
             element={
               <>
                 <Cart
+                  localStorage={storage}
+                  setEditingItem={setEditingItem}
                   setSubtotal={setSubtotal}
                   cart={cart}
+                  setCart={setCart}
                   setOpenCart={setOpenCart}
                 />
                 <MainFooter />

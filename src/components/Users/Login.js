@@ -1,55 +1,61 @@
-import React from 'react'
-import '../../css/Users/Login.scss'
-import { Navigate, useNavigate } from 'react-router-dom';
+import React from "react";
+import "../../css/Users/Login.scss";
+import { Navigate, useNavigate } from "react-router-dom";
 
-const Login = ({setUser}) => {
+const Login = ({ setUser }) => {
   let navigate = useNavigate();
 
-  function loginHandler(event){
+  function loginHandler(event) {
     event.preventDefault();
-    let email = event.target.email.value
-    let password = event.target.password.value
-  fetch('http://localhost:5000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': "application/json",
-        },
-        body: JSON.stringify({
-          "user":email , "pass":password
-        })
-      }).then((res)=>res.json()).then((data)=>{
-        if(data.success){
-          navigate('/')
+    let email = event.target.email.value;
+    let password = event.target.password.value;
+    fetch("https://nice-pink-sockeye-tutu.cyclic.app/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user: email,
+        pass: password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          navigate("/");
           setUser(JSON.stringify(data));
-          localStorage.setItem('user', JSON.stringify(data));
+          localStorage.setItem("user", JSON.stringify(data));
         }
       })
-      .catch(e => {
-        console.error(e.error)
-      })
-    }
-    
+      .catch((e) => {
+        console.error(e.error);
+      });
+  }
+
   return (
-    <div className='login-container'>
-        <div className='signup-header'>
-            <div className='sign-ups'>
-            <h3>Log in</h3>
-            </div>
+    <div className="login-container">
+      <div className="signup-header">
+        <div className="sign-ups">
+          <h3>Log in</h3>
         </div>
-        <form onSubmit={(e) => {loginHandler(e)}}>
-
-        <div className='inputs'>
-            <label htmlFor='email'>Email Address</label>
-            <input name='email' id='email' ></input>
-            <label htmlFor='password'>Password</label>
-            <input name='password' id="password"></input>
+      </div>
+      <form
+        onSubmit={(e) => {
+          loginHandler(e);
+        }}
+      >
+        <div className="inputs">
+          <label htmlFor="email">Email Address</label>
+          <input name="email" id="email"></input>
+          <label htmlFor="password">Password</label>
+          <input name="password" id="password"></input>
         </div>
-        <div className='login-button'>
-        <button type='submit'>Log in</button>
+        <div className="login-button">
+          <button type="submit">Log in</button>
         </div>
-        </form>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

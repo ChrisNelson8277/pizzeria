@@ -11,7 +11,7 @@ const Success = ({ setCart, user }) => {
   if (user) {
     userInfo = JSON.parse(user);
   }
-  console.log(userInfo);
+
   return (
     <div className="success-container">
       <div className="success-wrapper">

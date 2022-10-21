@@ -2,15 +2,33 @@ import React, { useState } from "react";
 import "../css/Cart.scss";
 import { motion } from "framer-motion";
 import SubTotal from "./Cart/SubTotal";
+import { useNavigate } from "react-router-dom";
 
 const Cart = (props) => {
   let counter = 0;
+  let navigate = useNavigate();
   const [page, updatePage] = useState();
   const [total, setTotal] = useState(0);
+
+  function editItem(uid, size, qty, instructions) {
+    const editingItem = {
+      uid: uid,
+      size: size,
+      qty: qty,
+      instructions: instructions,
+    };
+    props.setEditingItem(uid);
+    navigate("/ItemEditor");
+  }
+  function removeItem(item) {
+    let newArr = props.cart.filter((el) => el.uid !== item);
+    window.localStorage.setItem("items", JSON.stringify(newArr));
+
+    props.setCart(newArr);
+  }
   function updatePrice(qty, price) {
     let val = qty * price;
     counter = counter + price * qty;
-    console.log(counter.toFixed(2));
     props.setSubtotal(counter.toFixed(2));
     return val.toFixed(2);
   }
@@ -73,14 +91,35 @@ const Cart = (props) => {
                       {cartItems.special.map((instructions, index) => {
                         return <div key={index}>{instructions}</div>;
                       })}
-                      <br />
                     </div>
                   </div>
                 </div>
                 <div className="cart-price">
-                  ${updatePrice(cartItems.qty, cartItems.price)}
+                  <span>${updatePrice(cartItems.qty, cartItems.price)}</span>
+                  <div className="cart-buttons">
+                    <button
+                      id="cart-button"
+                      onClick={() => {
+                        editItem(
+                          cartItems.uid,
+                          cartItems.size,
+                          cartItems.qty,
+                          cartItems.special
+                        );
+                      }}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      id="cart-button"
+                      onClick={() => {
+                        removeItem(cartItems.uid);
+                      }}
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
-                <br />
               </div>
             );
           })}

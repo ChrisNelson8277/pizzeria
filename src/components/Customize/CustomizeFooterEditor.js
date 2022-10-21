@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../css/Customize/Customize.css";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { BsXLg } from "react-icons/bs";
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 let displayPrice = 0;
-const CustomizeFooter = (props) => {
+const CustomizeFooterEditor = (props) => {
   let navigate = useNavigate();
   const [qty, setQty] = useState(1);
 
@@ -35,25 +35,16 @@ const CustomizeFooter = (props) => {
       return displayPrice.toFixed(2);
     }
   }
-  let newItem = {
-    name: props.customize[0].name,
-    qty: props.customize[0].qty,
-    uid: uuidv4(),
-    id: props.customize[0].id,
-    size: props.size,
-    price: props.price,
-    special: props.instructionsList,
-  };
-
-  function addToCart() {
-    if (props.size === undefined) {
-      alert("You must select a size");
-    } else {
-      navigate("/menu");
-      props.setCart([newItem, ...props.cart]);
-      localStorage.setItem("items", JSON.stringify([newItem, ...props.cart]));
-    }
+  function updateCart() {
+    props.foundItem.special = props.instructionsList;
+    props.foundItem.qty = qty;
+    props.foundItem.size = props.size;
+    navigate("/cart");
   }
+  useEffect(() => {
+    setQty(props.foundItem.qty);
+  }, []);
+
   return (
     <div className="footer-container">
       <div className="footer-flex">
@@ -74,7 +65,13 @@ const CustomizeFooter = (props) => {
         </div>
         <div className="price-calories">{getPrice()}</div>
         <div className="footer-button">
-          <button onClick={addToCart}>Add to Cart</button>
+          <button
+            onClick={() => {
+              updateCart();
+            }}
+          >
+            Add to Cart
+          </button>
           <BsXLg
             onClick={() => {
               navigate("/menu");
@@ -87,4 +84,4 @@ const CustomizeFooter = (props) => {
   );
 };
 
-export default CustomizeFooter;
+export default CustomizeFooterEditor;

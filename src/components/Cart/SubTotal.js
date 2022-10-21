@@ -5,33 +5,28 @@ import "../../css/Cart/subtotal.css";
 const SubTotal = (props) => {
   let navigate = useNavigate();
   function goToCheckout() {
-    navigate("/checkout");
-  }
-  console.log(props, "sub props");
-  function goToCheckout() {
-    fetch("http://localhost:5000/create-checkout-session/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        items: props.cartItems.map((items) => {
-          console.log(items);
-          return { id: items.id, qty: items.qty, size: items.size };
+    fetch(
+      "https://nice-pink-sockeye-tutu.cyclic.app/create-checkout-session/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          items: props.cartItems.map((items) => {
+            return { id: items.id, qty: items.qty, size: items.size };
+          }),
         }),
-      }),
-    })
+      }
+    )
       .then((res) => {
         if (res.ok) return res.json();
         return res.json().then((json) => Promise.reject(json));
       })
       .then(({ url, orderId }) => {
-        console.log(url);
         window.location = url;
       })
-      .then((res) => {
-        console.log(res);
-      })
+
       .catch((e) => {
         console.error(e.error);
       });

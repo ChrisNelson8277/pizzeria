@@ -1,13 +1,14 @@
 .customize-container{
     position: relative;
-    width: 90%;
+    width: 60%;
     margin: auto;
     margin-top: 2vh;
+    height: 100vh;
 }
 
 .flex{
     display: flex;
-    padding: 3% 0;
+    padding: 0.5rem 0;
     justify-content: space-around;
     align-items: center;
 }
@@ -17,7 +18,7 @@
     justify-content: left;
 }
 .first-flex label{
-    font-size: 1rem;
+    font-size: 1.5rem;
     align-items: center;
     justify-content: center;
     align-content: center;
@@ -34,7 +35,9 @@
     margin: 0 auto;
 }
 .size-container{
+    font-size: 1.5rem;
     background: white;
+    border-radius: 10px;
 }
 .footer-container{
     position: sticky;
@@ -44,6 +47,7 @@
     width: 100%;
     color: white;
     margin: auto;
+    border-radius: 10px;
 }
 .footer-flex{
     display: flex;
@@ -52,6 +56,7 @@
     justify-content: space-between;
     padding: 0 3%;
     font-size: 1.5rem;
+    border-radius: 10px;
 }
 .footer-qty{
     display: flex;
@@ -80,6 +85,7 @@ display: flex;
     display: flex;
     justify-content: left;
     align-items: center;
+    font-size: 1.5rem;
 }
 .form-flex input{
     margin: 0;
@@ -102,6 +108,7 @@ display: flex;
     background-color: white;
     width: 100%;
     padding-bottom: 1%;
+    border-radius: 10px;
 }
 .toppings-container form{
     width: 75%;
