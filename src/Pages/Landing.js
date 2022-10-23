@@ -45,7 +45,7 @@ const Landing = () => {
       <div className="image2-grid">
         <div className="grid2-left">
           <h2>Try our award winning Pepperoni pizza! </h2>
-          <p>Starting at $10.99</p>
+          <p>Starting at $12.99</p>
           <p>Loaded Edge to Edge with pieces of crispy, heritage pepperoni.</p>
           <Link to={"/menu"}>Order now</Link>
         </div>

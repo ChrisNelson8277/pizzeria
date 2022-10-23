@@ -51,10 +51,9 @@ const Sizes = (props) => {
               checked={sizes === "small"}
               value={"small"}
             ></input>
-            <label>Small 11"</label>
-          </div>
-          <div>
-            <h4>$12.99</h4>
+            <label>
+              <h4>Small $12.99</h4>
+            </label>
           </div>
         </div>
         <div className="flex">
@@ -68,9 +67,8 @@ const Sizes = (props) => {
               checked={sizes === "medium"}
               value={"medium"}
             ></input>
-            <label>Medium 13"</label>
+            <label>Medium $14.99</label>
           </div>
-          <h4>$14.99</h4>
         </div>
         <div className="flex">
           <div className="first-flex">
@@ -83,10 +81,9 @@ const Sizes = (props) => {
               checked={sizes === "large"}
               value={"large"}
             ></input>
-            <label>Large 15"</label>
-          </div>
-          <div>
-            <h4>$16.99</h4>
+            <label>
+              <h4>Large $16.99</h4>
+            </label>
           </div>
         </div>
       </form>

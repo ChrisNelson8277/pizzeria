@@ -10,13 +10,15 @@ const Customize = ({ setLocalStorage, customize, setCart, cart }) => {
   const [size, setSize] = useState();
   const [newCartItem, setNewCartItem] = useState([]);
   const [instructionsList, setInstructionsList] = useState([]);
+  console.log(customize);
   return (
     <div className="customize-container">
       <div className="customize-grid">
-        <picture>
+        <picture className="customize-img">
           <img src={cheese}></img>
         </picture>
-        <div>
+        <div className="customize-grid-right">
+          <h1>{customize[0].name}</h1>
           <Sizes setSize={setSize} setPrice={setPrice} />
           <Toppings setInstructionsList={setInstructionsList} />
           <CustomizeFooter
