@@ -1,6 +1,6 @@
 import React from "react";
 import "../../css/Menu/Card.scss";
-import pepImg from "../../images/menu/vinnyspep.png";
+import pepImg from "../../images/menu/cheese.jpg";
 import { useNavigate } from "react-router-dom";
 const Card = ({
   name,
@@ -39,18 +39,17 @@ const Card = ({
       </div>
       <div className="card-desc-header">
         <h2>{name}</h2>
+        <div className="starting-price">
+          <p>Starting at $12.99</p>
+        </div>
       </div>
-      <h5>Ingredients</h5>
       <div className="card-desc">
-        (
-        {toppings.map((topping, index) => (
-          <span key={index}>
-            {index == toppings.length - 1 ? topping : topping + ", "}
-          </span>
-        ))}
-        )
+        <p>
+          {toppings.map((topping, index) =>
+            index == toppings.length - 1 ? topping : topping + ", "
+          )}
+        </p>
       </div>
-      <div className="card-desc">Starting at ${smallPrice}</div>
       <div>
         <button className="card-button" onClick={goToCustomize}>
           Add To Order

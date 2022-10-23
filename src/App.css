@@ -23,11 +23,11 @@ body {
   display: grid;
   width: 100%;
   grid-template-columns:  100%;
-  gap: 3vw;
   margin: auto;
   align-items: center;
   justify-content: space-between;
   justify-items: center;
+  gap: 1rem;
 }
 .card-img{
   max-width: 100%;
@@ -35,13 +35,9 @@ body {
 @media (min-width:850px){
   .cards{
     display: grid;
-    width: 100%;
+    width: 70%;
     grid-template-columns:  50% 50%;
-    gap: 3vw;
-    margin: auto;
-    align-items: center;
-    justify-content: space-between;
-    justify-items: center;
+    gap: 3rem;
   }
 }
 @media (min-width:1200px){
@@ -49,6 +45,5 @@ body {
 @media(min-width:1800px){
   .cards{
     font-size: 1.3rem;
-    gap: 1vw;
   }
 }

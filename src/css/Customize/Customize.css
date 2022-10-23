@@ -1,9 +1,11 @@
 .customize-container{
     position: relative;
     width: 60%;
-    margin: auto;
-    margin-top: 2vh;
-    height: 100vh;
+    margin: 8vh auto;
+}
+.customize-grid{
+    display: grid;
+    grid-template-columns: 60% 40%;
 }
 
 .flex{
