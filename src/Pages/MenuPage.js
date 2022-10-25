@@ -8,7 +8,7 @@ const MenuPage = (props) => {
   const [menu, setMenu] = useState([]);
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://pizzeria-site-default-rtdb.firebaseio.com/pizzas.json")
+    fetch("https://nice-pink-sockeye-tutu.cyclic.app/db/menuItems")
       .then((response) => {
         return response.json();
       })
@@ -21,7 +21,6 @@ const MenuPage = (props) => {
           };
           products.push(product);
         }
-
         setIsLoading(false);
         setMenu(products);
       });

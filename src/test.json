@@ -1,0 +1,35 @@
+[
+{
+    "id": 0,
+    "Name": "Pepperoni",
+    "smallPrice": 9.95,
+    "mediumPrice": 12.95,
+    "largePrice": 15.95,
+    "toppings": ["cheese","Pizza Sauce","pepperoni"]
+},
+{
+    "id": 1,
+    "Name": "Cheese",
+    "smallPrice": 9.95,
+    "mediumPrice": 12.95,
+    "largePrice": 15.95,
+    "toppings": ["cheese","Pizza Sauce"] 
+},
+{
+    "id": 2,
+    "Name": "Mega Meat",
+    "smallPrice": 9.95,
+    "mediumPrice": 12.95,
+    "largePrice": 15.95,
+    "toppings": ["cheese","Pizza Sauce","pepperoni","sausage","bacon","ham","beef"]
+},
+{
+    "id": 3,
+    "Name": "Spicy Pepperoni",
+    "smallPrice": 9.95,
+    "mediumPrice": 12.95,
+    "largePrice": 15.95,
+    "toppings": ["cheese","Pizza Sauce","pepperoni","banana peppers","Cajun Crust"]
+}
+
+]
