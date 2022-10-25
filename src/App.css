@@ -19,6 +19,14 @@ body {
 .app-cards-container{
   width: 100%;
 }
+.loading-spinner{
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .cards{
   display: grid;
   width: 100%;

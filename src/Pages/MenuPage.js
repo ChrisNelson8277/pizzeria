@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Sizes from "../components/Customize/Sizes";
 import Card from "../components/MenuComponents/Card";
 import MenuSelect from "../components/MenuSelect";
+import { TailSpin } from "react-loader-spinner";
 
 const MenuPage = (props) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,17 +21,26 @@ const MenuPage = (props) => {
             ...data[key],
           };
           products.push(product);
+          setMenu(products);
         }
         setIsLoading(false);
-        setMenu(products);
       });
   }, []);
 
   if (isLoading) {
     return (
-      <section>
-        <p>Loading...</p>
-      </section>
+      <div className="loading-spinner">
+        <TailSpin
+          height="80"
+          width="80"
+          color="#490a13"
+          ariaLabel="tail-spin-loading"
+          radius="1"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
     );
   }
 
