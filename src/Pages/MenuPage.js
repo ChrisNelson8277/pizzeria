@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Sizes from "../components/Customize/Sizes";
 import Card from "../components/MenuComponents/Card";
-import MenuSelect from "../components/MenuSelect";
+import "../components/MenuSelect";
 import { TailSpin } from "react-loader-spinner";
 
 const MenuPage = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [menu, setMenu] = useState([]);
+  const [list, setList] = useState([]);
   useEffect(() => {
     setIsLoading(true);
     fetch("https://nice-pink-sockeye-tutu.cyclic.app/db/menuItems")
@@ -21,9 +21,14 @@ const MenuPage = (props) => {
             ...data[key],
           };
           products.push(product);
-          setMenu(products);
+
+          const filtered = products.filter((data) => {
+            return data.Category === "pizza";
+          });
+          setList(products);
+          setMenu(filtered);
+          setIsLoading(false);
         }
-        setIsLoading(false);
       });
   }, []);
 
@@ -44,13 +49,59 @@ const MenuPage = (props) => {
     );
   }
 
+  const filterData = (item) => {
+    const newList = list.filter((data) => {
+      return data.Category === item;
+    });
+    setMenu(newList);
+  };
+
   return (
     <div className="menu-container">
-      {/* <MenuSelect /> */}
+      <div className="menu-links-container">
+        <input
+          type="radio"
+          className="menu-tabs"
+          name="tab"
+          id="tab1"
+          defaultChecked={true}
+          onChange={() => {
+            filterData("pizza");
+          }}
+        ></input>
+        <label htmlFor="tab1" className="menu-label">
+          Pizza
+        </label>
+        <input
+          type="radio"
+          className="menu-tabs"
+          name="tab"
+          id="tab2"
+          onChange={() => {
+            filterData("Subs");
+          }}
+        ></input>
+        <label className="menu-label" htmlFor="tab2">
+          Subs
+        </label>
+        <input
+          type="radio"
+          className="menu-tabs"
+          name="tab"
+          id="tab3"
+          onChange={() => {
+            filterData("salad");
+          }}
+        ></input>
+        <label className="menu-label" htmlFor="tab3">
+          Salads
+        </label>
+      </div>
       <div className="app-cards-container">
         <div className="cards">
           {menu.map((menuItems) => (
             <Card
+              image={menuItems.image}
               setCustomize={props.setCustomize}
               key={menuItems.id}
               id={menuItems.id}

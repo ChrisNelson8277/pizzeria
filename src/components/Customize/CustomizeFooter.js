@@ -42,6 +42,9 @@ const CustomizeFooter = (props) => {
     id: props.customize[0].id,
     size: props.size,
     price: props.price,
+    smallPrice: props.customize[0].smallPrice,
+    mediumPrice: props.customize[0].mediumPrice,
+    largePrice: props.customize[0].largePrice,
     special: props.instructionsList,
   };
 

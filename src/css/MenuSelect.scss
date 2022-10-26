@@ -10,6 +10,37 @@
     align-items: center;
     justify-content:flex-end;
 }
+.menu-links-container{
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 1rem 0;
+    margin-bottom: 3vh;
+}
+.menu-links-container{
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+.menu-tabs{
+    display: none;
+}
+.menu-tabs:checked+.menu-label{
+    border-bottom: 3px solid red;
+}
+.menu-links-container label{
+    cursor: pointer;
+    padding: 0 1rem;
+    margin: 0 0.3rem;
+}
+.menu-links-container li{
+    list-style: none;
+    display: inline;
+    padding: 0 1rem;
+}
 select{
     align-items: center;
     padding: 0.5rem;

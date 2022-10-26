@@ -10,6 +10,7 @@ const Card = ({
   largePrice,
   setCustomize,
   id,
+  image,
 }) => {
   let navigate = useNavigate();
   let item = [
@@ -17,8 +18,9 @@ const Card = ({
       name: name,
       id: id,
       smallPrice: smallPrice,
-      meduimPrice: mediumPrice,
+      mediumPrice: mediumPrice,
       largePrice: largePrice,
+      image: image,
       qty: 1,
     },
   ];
@@ -32,7 +34,7 @@ const Card = ({
         <picture>
           <img
             className="product-picture"
-            src={pepImg}
+            src={image ? image : pepImg}
             alt="Pepperoni Pizza"
           ></img>
         </picture>
@@ -40,7 +42,7 @@ const Card = ({
       <div className="card-desc-header">
         <h2>{name}</h2>
         <div className="starting-price">
-          <p>Starting at $12.99</p>
+          <p>Starting at {smallPrice}</p>
         </div>
       </div>
       <div className="card-desc">

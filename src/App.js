@@ -26,6 +26,7 @@ function App() {
   const [openCart, setOpenCart] = useState(false);
   const [subtotal, setSubtotal] = useState(0);
   const [editingItem, setEditingItem] = useState();
+  const [list, setList] = useState([]);
   const storage = window.localStorage.getItem("items");
   const isLoggedIn = window.localStorage.getItem("user");
 
@@ -103,7 +104,11 @@ function App() {
             path="/menu"
             element={
               <>
-                <MenuPage setCustomize={setCustomize} />
+                <MenuPage
+                  setList={setList}
+                  list={list}
+                  setCustomize={setCustomize}
+                />
                 <MainFooter />
               </>
             }

@@ -6,13 +6,13 @@ const Sizes = (props) => {
   function updatePrice(size) {
     setSizes(size);
     if (size === "small") {
-      props.setPrice(12.99);
+      props.setPrice(props.customize[0].smallPrice);
       props.setSize(size);
     } else if (size === "medium") {
-      props.setPrice(14.99);
+      props.setPrice(props.customize[0].mediumPrice);
       props.setSize(size);
     } else if (size === "large") {
-      props.setPrice(16.99);
+      props.setPrice(props.customize[0].largePrice);
       props.setSize(size);
     }
   }
@@ -33,7 +33,7 @@ const Sizes = (props) => {
         return;
       } else return;
     }
-  }, []);
+  }, [props]);
   return (
     <div className="size-container">
       <form className="form-container">
@@ -52,7 +52,12 @@ const Sizes = (props) => {
               value={"small"}
             ></input>
             <label>
-              <h4>Small $12.99</h4>
+              <h4>
+                Small{" "}
+                {props.customize
+                  ? props.customize[0].smallPrice
+                  : props.foundItem.smallPrice}
+              </h4>
             </label>
           </div>
         </div>
@@ -67,7 +72,12 @@ const Sizes = (props) => {
               checked={sizes === "medium"}
               value={"medium"}
             ></input>
-            <label>Medium $14.99</label>
+            <label>
+              Medium{" "}
+              {props.customize
+                ? props.customize[0].mediumPrice
+                : props.foundItem.mediumPrice}
+            </label>
           </div>
         </div>
         <div className="flex">
@@ -82,7 +92,12 @@ const Sizes = (props) => {
               value={"large"}
             ></input>
             <label>
-              <h4>Large $16.99</h4>
+              <h4>
+                Large{" "}
+                {props.customize
+                  ? props.customize[0].largePrice
+                  : props.foundItem.largePrice}
+              </h4>
             </label>
           </div>
         </div>
