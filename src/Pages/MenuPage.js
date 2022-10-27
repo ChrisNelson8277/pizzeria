@@ -9,7 +9,7 @@ const MenuPage = (props) => {
   const [list, setList] = useState([]);
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://nice-pink-sockeye-tutu.cyclic.app/db/menuItems")
+    fetch("http://localhost:5000/db/menuItems")
       .then((response) => {
         return response.json();
       })
@@ -57,61 +57,65 @@ const MenuPage = (props) => {
   };
 
   return (
-    <div className="menu-container">
-      <div className="menu-links-container">
-        <input
-          type="radio"
-          className="menu-tabs"
-          name="tab"
-          id="tab1"
-          defaultChecked={true}
-          onChange={() => {
-            filterData("pizza");
-          }}
-        ></input>
-        <label htmlFor="tab1" className="menu-label">
-          Pizza
-        </label>
-        <input
-          type="radio"
-          className="menu-tabs"
-          name="tab"
-          id="tab2"
-          onChange={() => {
-            filterData("Subs");
-          }}
-        ></input>
-        <label className="menu-label" htmlFor="tab2">
-          Subs
-        </label>
-        <input
-          type="radio"
-          className="menu-tabs"
-          name="tab"
-          id="tab3"
-          onChange={() => {
-            filterData("salad");
-          }}
-        ></input>
-        <label className="menu-label" htmlFor="tab3">
-          Salads
-        </label>
-      </div>
-      <div className="app-cards-container">
-        <div className="cards">
-          {menu.map((menuItems) => (
-            <Card
-              image={menuItems.image}
-              setCustomize={props.setCustomize}
-              key={menuItems.id}
-              id={menuItems.id}
-              name={menuItems.Name}
-              toppings={menuItems.toppings}
-              smallPrice={menuItems.smallPrice}
-              mediumPrice={menuItems.mediumPrice}
-              largePrice={menuItems.largePrice}
-            />
-          ))}
+    <div className="menu-container-1">
+      <div className="menu-container">
+        <div className="menu-links-container">
+          <div className="menu-link-wrapper">
+            <input
+              type="radio"
+              className="menu-tabs"
+              name="tab"
+              id="tab1"
+              defaultChecked={true}
+              onChange={() => {
+                filterData("pizza");
+              }}
+            ></input>
+            <label htmlFor="tab1" className="menu-label">
+              Pizza
+            </label>
+            <input
+              type="radio"
+              className="menu-tabs"
+              name="tab"
+              id="tab2"
+              onChange={() => {
+                filterData("Subs");
+              }}
+            ></input>
+            <label className="menu-label" htmlFor="tab2">
+              Subs
+            </label>
+            <input
+              type="radio"
+              className="menu-tabs"
+              name="tab"
+              id="tab3"
+              onChange={() => {
+                filterData("salad");
+              }}
+            ></input>
+            <label className="menu-label" htmlFor="tab3">
+              Salads
+            </label>
+          </div>
+        </div>
+        <div className="app-cards-container">
+          <div className="cards">
+            {menu.map((menuItems) => (
+              <Card
+                image={menuItems.image}
+                setCustomize={props.setCustomize}
+                key={menuItems.id}
+                id={menuItems.id}
+                name={menuItems.Name}
+                toppings={menuItems.toppings}
+                smallPrice={menuItems.smallPrice}
+                mediumPrice={menuItems.mediumPrice}
+                largePrice={menuItems.largePrice}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

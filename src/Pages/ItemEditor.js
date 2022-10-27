@@ -4,7 +4,7 @@ import Sizes from "../components/Customize/Sizes";
 import ToppingsEditor from "../components/Customize/ToppingsEditor";
 import "../css/Customize/Customize.css";
 
-const ItemEditor = ({ setLocalStorage, customize, setCart, cart, uid }) => {
+const ItemEditor = ({ customize, setCart, cart, uid }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [foundItem, setFoundItem] = useState();
   const [price, setPrice] = useState(0);
@@ -40,7 +40,6 @@ const ItemEditor = ({ setLocalStorage, customize, setCart, cart, uid }) => {
           <CustomizeFooterEditor
             foundItem={foundItem}
             instructionsList={instructionsList}
-            setLocalStorage={setLocalStorage}
             setCart={setCart}
             cart={cart}
             price={price}

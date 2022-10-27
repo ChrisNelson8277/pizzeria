@@ -1,7 +1,14 @@
 .menu-container{
     width: 80%;
-    margin: 8vh auto;
-
+    margin: auto;
+    padding: 8vh 0;
+}
+.menu-container-1{
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/menu/menubg.jpg');
+    background-size: cover;
+    background-position: top center;
 }
 .menu-items-select{
     width: 100%;
@@ -19,6 +26,12 @@
     padding: 1rem 0;
     margin-bottom: 3vh;
 }
+.menu-link-wrapper{
+    background-color: #490a13;
+    border-radius: 10px;
+    font-family: 'anton', sans-serif;
+    padding: 1rem;
+}
 .menu-links-container{
     user-select: none;
     -ms-user-select: none;
@@ -29,7 +42,7 @@
     display: none;
 }
 .menu-tabs:checked+.menu-label{
-    border-bottom: 3px solid red;
+    border-bottom: 3px solid rgb(4, 4, 4);
 }
 .menu-links-container label{
     cursor: pointer;

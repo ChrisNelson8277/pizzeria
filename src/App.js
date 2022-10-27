@@ -43,6 +43,10 @@ function App() {
     }
   }, []);
 
+  const emptyCart = () => {
+    setCart([]);
+  };
+
   return (
     <Router>
       <div className="App">

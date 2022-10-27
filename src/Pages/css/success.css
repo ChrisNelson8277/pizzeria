@@ -7,7 +7,7 @@
 .success-wrapper{
     background-color: white;
     width: 80%;
-    padding: 0 1rem;
+    padding: 1rem;
 }
 .first-last{
     text-transform: capitalize;
@@ -16,4 +16,24 @@
     justify-content: center;
     padding: 0;
     margin: 0;
+}
+.success-card-wrapper{
+    border-radius:200px;
+    height:200px; 
+    width:200px; 
+    background: #F8FAF5; 
+    margin:0 auto;
+
+}
+.success-card{
+    font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+}
+.success-card h1{
+    font-family: 'Anton', sans-serif;
+}
+.checkmark{
+    color: #99ff00;
+    font-size: 100px;
+    line-height: 200px;
+    margin-left:-15px;
 }
