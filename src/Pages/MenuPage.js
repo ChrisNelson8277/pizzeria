@@ -9,7 +9,7 @@ const MenuPage = (props) => {
   const [list, setList] = useState([]);
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5000/db/menuItems")
+    fetch("https://nice-pink-sockeye-tutu.cyclic.app/db/menuItems")
       .then((response) => {
         return response.json();
       })

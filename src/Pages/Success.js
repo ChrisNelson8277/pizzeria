@@ -15,7 +15,7 @@ const Success = ({ setCart, user }) => {
       const params = new URLSearchParams(window.location.search);
       const sessionId = params.get("session_id");
       // https://nice-pink-sockeye-tutu.cyclic.app
-      fetch("http://localhost:5000/order/success", {
+      fetch("https://nice-pink-sockeye-tutu.cyclic.app/order/success", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
